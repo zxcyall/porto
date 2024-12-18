@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <canvas id="myChart" width="400" height="200"></canvas>
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'],
+                datasets: [{
+                    label: '2022',
+                    data: [4.017, 6.135, 7.091, 5.841, 5.036, 4.547, 3.467, 3.970, 6.313, 3.595, 9.207, 5.945],
+                    borderColor: 'rgb(255, 99, 132)',
+                    borderWidth: 1,
+                    fill: false
+                }, {
+                    label: '2023',
+                    data: [8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689, 8.689],
+                    borderColor: 'rgb(54, 162, 235)',
+                    borderWidth: 1,
+                    fill: false
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
